@@ -7,7 +7,7 @@ export const GlobalStyle = createGlobalStyle`
     margin: 0;
     width: 100%;
     height: 100%;
-    font-family: -apple-system, Roboto, Oxygen,
+    font-family: -apple-system, Montserrat, Oxygen,
       Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   }
 
@@ -16,7 +16,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    background: #ececec;
+    background: #E5E5E5;
   }
 
   ::-webkit-scrollbar {
