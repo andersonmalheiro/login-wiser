@@ -1,9 +1,8 @@
 import React from 'react';
 import { StyledButton } from './app-button.styles';
 
-interface AppButtonProps {
+interface AppButtonProps extends Partial<HTMLButtonElement> {
   text: string;
-  disabled?: boolean;
   onClick?: (...args: any[]) => void;
 }
 
