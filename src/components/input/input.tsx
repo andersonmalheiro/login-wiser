@@ -12,6 +12,7 @@ interface AppInputProps {
   maxLength?: number;
   label: string;
   placeholder?: string;
+  onChange?: (...args: any[]) => void;
 }
 
 export const AppInput = (props: AppInputProps) => {

@@ -1,5 +1,5 @@
 import { AppButton } from 'components/app-button/app-button';
-import { AppForm } from 'components/form/app-form';
+import { AppForm, useForm } from 'components/form';
 import { AppInput } from 'components/input/input';
 import Head from 'next/head';
 import {
@@ -9,9 +9,15 @@ import {
   StyledH1,
   StyledH2,
 } from 'styles/index.styles';
-import { FlexColumn, FlexRow } from 'styles/utils';
+import { FlexColumn } from 'styles/utils';
 
 export default function Home() {
+  const login = () => {
+    console.log(values);
+  };
+
+  const { handleChange, handleSubmit, values } = useForm(login);
+
   return (
     <div>
       <Head>
@@ -26,13 +32,14 @@ export default function Home() {
             <StyledH1>Olá, seja bem vindo!</StyledH1>
             <StyledH2>Para acessar a plataforma, faça seu login.</StyledH2>
 
-            <AppForm onSubmit={() => {}}>
+            <AppForm onSubmit={handleSubmit}>
               <AppInput
                 id="email"
                 name="email"
                 type="email"
                 label="E-MAIL"
                 placeholder="user.name@mail.com"
+                onChange={handleChange}
               />
               <AppInput
                 id="password"
@@ -40,9 +47,10 @@ export default function Home() {
                 type="password"
                 label="SENHA"
                 placeholder="******"
+                onChange={handleChange}
               />
 
-              <AppButton text={'Entrar'}></AppButton>
+              <AppButton type={'submit'} text={'Entrar'}></AppButton>
             </AppForm>
 
             <div>
